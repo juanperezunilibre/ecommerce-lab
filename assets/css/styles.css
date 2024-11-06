@@ -74,3 +74,28 @@ footer a {
     border-radius: 5px;
     transition: .3s ease all;
 }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+
+#whatsapp-button {
+    font-size: 20px;
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-wrapper form {
+    width: 400px;
+    padding: 20px;
+}
+
+.contact-wrapper iframe {
+    flex: 1;
+}
