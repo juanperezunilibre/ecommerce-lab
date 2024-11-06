@@ -9,6 +9,7 @@
 </head>
 <body>
 <header>
+    <a href="index.html">
     <img src="Assets/img/Logo%20Ocean%20Nomads%20fondo%20aguamarina.png" alt="">
 
     <button class="btn btn-outline-dark btn-lg" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
@@ -72,8 +73,37 @@
 
     </div>
 </div>
+<main>
+    <div class="contact-wrapper">
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Celular</label>
+                <input type="text" class="form-control" id="phone" placeholder="Teléfono o celular">
+            </div>
+            <div class="mb-3">
+                <label for="comment" class="form-label">Comentario (opcional)</label>
+                <textarea class="form-control" id="comment" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary">
+                Enviar
+            </button>
+        </form>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62412.188808515544!2d-68.93980016147385!3d12.128443744540915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e84825f0ca62f57%3A0x1f4992b431554def!2sWillemstad%2C%20Curazao!5e0!3m2!1ses!2sco!4v1730902944943!5m2!1ses!2sco"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
-<script src="Assets/JS/bootstrap.bundle.min.js"></script>
+    <a class="btn btn-primary" id="whatsapp-button" target="_blank" href="https://wa.me/+573224567885"> <i
+            class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+</main>
 <footer>
     <div>
         <strong>Sé parte de Ocean Nomads Diving Club</strong>
@@ -120,5 +150,6 @@
         </ul>
     </div>
 </footer>
+<script src="Assets/JS/bootstrap.bundle.min.js"></script>
 </body>
 </html>

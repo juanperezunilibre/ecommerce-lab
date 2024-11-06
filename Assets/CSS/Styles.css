@@ -3,9 +3,11 @@
 :root {
 
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 header {
     display: flex;
     align-items: center;
@@ -33,6 +35,16 @@ header .user-menu a {
 
 main {
     height: auto;
+
+
+}
+
+.product-grid {
+    flex: 1;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
 }
 
 main h1 {
@@ -45,6 +57,43 @@ main p {
     color: #1a1d20;
 }
 
+.price-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.price-content span:nth-child(1) {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.price-content span:nth-child(2) {
+    text-decoration: line-through;
+    color: #0a58ca;
+}
+
+
+.contact-wrapper {
+    display: flex;
+    gap: 15px;
+
+}
+
+.contact-wrapper form{
+    width: 400px;
+    padding: 20px;
+
+}
+
+.contact-wrapper iframe{
+    flex: 1;
+}
+
+#whatsapp-button{
+    font-size: 20px;
+    background-color: #24b4b4;
+}
 
 footer ul {
     list-style: none;
