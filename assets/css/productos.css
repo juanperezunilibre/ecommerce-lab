@@ -1,0 +1,20 @@
+.price-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.price-content span:nth-child(1) {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.price-content span:nth-child(2) {
+    text-decoration: line-through;
+    color:  #69797E;
+}
+
+.star-content {
+    margin: 5px 0;
+}
+
