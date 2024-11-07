@@ -1,77 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Productos</title>
+    <title>Productos | e-commerce lab</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/Styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/productos.css">
 </head>
 <body>
-<header>
-    <img src="../img/rb_2149496428.png" alt="logo" width="150">
+    <header>
+        <img src="../img/rb_2149496428.png" alt="logo" width="150">
 
-    <button class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
-        <i class="fa-solid fa-bars"></i>
-        Menú
-    </button>
-
-    <div class="search-wrapper">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Buscar..." aria-label="Search"
-                   aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Hola, Inicia Sesión
+        <button class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
+            <i class="fa-solid fa-bars"></i>
+            Menú
         </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="assets/pages/login.html">Iniciar Sesión</a></li>
-            <li><a class="dropdown-item" href="#">Registrarse</a></li>
-        </ul>
-    </div>
 
-    <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-       href="#">
-        Mis compras
-    </a>
-
-    <button class="btn btn-secondary" type="button" aria-expanded="false">
-        <i class="fa-regular fa-heart"></i>
-    </button>
-
-    <button class="btn btn-secondary" type="button" aria-expanded="false">
-        <i class="fa-solid fa-cart-shopping"></i>
-    </button>
-</header>
-<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar-menu" aria-labelledby="sidebar-menu">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
-            etc.
+        <div class="search-wrapper">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar..." aria-label="Search" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
         </div>
-        <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Hola, Inicia Sesión
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="login.html">Iniciar Sesión</a></li>
+                <li><a class="dropdown-item" href="registro.html">Registrarse</a></li>
             </ul>
         </div>
+
+        <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="compras.html">
+            Mis compras
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+    </header>
+    <!-- Menu sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar-menu" aria-labelledby="sidebar-menu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menú</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a href="../../index.html">
+                <i class="fa fa-home"></i>
+                Inicio
+            </a>
+            <a href="compras.html">
+                <i class="fa fa-money-bill"></i>
+                Compras
+            </a>
+            <a href="productos.html">
+                <i class="fa fa-box-archive"></i>
+                Productos
+            </a>
+            <a href="contact.html">
+                <i class="fa fa-phone"></i>
+                Contáctanos
+            </a>
+            <a href="/">
+                <i class="fa fa-question-circle"></i>
+                Acerca de
+            </a>
+        </div>
     </div>
-</div>
 <main>
     <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col">

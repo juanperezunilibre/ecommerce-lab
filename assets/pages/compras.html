@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Compras | e-commerce lab</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/compras.css">
+</head>
+
+<body>
+    <header>
+        <img src="../img/rb_2149496428.png" alt="logo" width="150">
+
+        <button class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
+            <i class="fa-solid fa-bars"></i>
+            Menú
+        </button>
+
+        <div class="search-wrapper">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar..." aria-label="Search"
+                    aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Hola, Inicia Sesión
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="login.html">Iniciar Sesión</a></li>
+                <li><a class="dropdown-item" href="registro.html">Registrarse</a></li>
+            </ul>
+        </div>
+
+        <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="compras.html">
+            Mis compras
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+    </header>
+    <!-- Menu sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar-menu" aria-labelledby="sidebar-menu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menú</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a href="../../index.html">
+                <i class="fa fa-home"></i>
+                Inicio
+            </a>
+            <a href="/">
+                <i class="fa fa-money-bill"></i>
+                Compras
+            </a>
+            <a href="productos.html">
+                <i class="fa fa-box-archive"></i>
+                Productos
+            </a>
+            <a href="contacto.html">
+                <i class="fa fa-phone"></i>
+                Contáctanos
+            </a>
+            <a href="acercade.html">
+                <i class="fa fa-question-circle"></i>
+                Acerca de
+            </a>
+        </div>
+    </div>
+
+    <main class="main-body-container">
+        <!-- categorias -->
+        <section>
+            <h1 class="h2 pb-4">Categorías</h1>
+            <ul class="list-unstyled templamo-accordion">
+                <li class="pb-3">
+                    <a href="#" class="callapsed d-flex justify-content-between h3 text-decoration-none ">
+                        Genero
+                        <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+                </li>
+                <li class="pb-3">
+                    <a href="#" class="callapsed d-flex justify-content-between h3 text-decoration-none ">
+                        Ventas
+                        <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+                </li>
+                <li class="pb-3">
+                    <a href="#" class="callapsed d-flex justify-content-between h3 text-decoration-none ">
+                        Productos
+                        <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- carrito de compras  -->
+        <section>
+            <div class="item">
+            </div>
+            <aside class="col-sm-4">
+                <h3>Carrito</h3>
+                <ul id="carrito" class="list-group"></ul>
+                <p class="text-right">$Total:
+                    <span class="total"></span>
+                </p>
+                <button class="btn btn-secondary" type="button">Vaciar</button>
+                <button class="btn btn-primary" type="button">Pagar</button>
+            </aside>
+        </section>
+        <!-- otra section  -->
+        <section>
+            
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <strong>Te ayudamos</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+                <li><a href="#">Elemento 6</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <strong>Se parte de mitienda.com</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+                <li><a href="#">Elemento 6</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <strong>Se parte de mitienda.com</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+                <li><a href="#">Elemento 6</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <strong>Se parte de mitienda.com</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+                <li><a href="#">Elemento 6</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js" type="module"></script>
+</body>
+
+</html>
