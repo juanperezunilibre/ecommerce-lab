@@ -1,0 +1,19 @@
+main {
+    margin-top: 10px; 
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.contact-wrapper form {
+    width: 400px;
+    padding: 20px;
+}
+
+.contact-wrapper iframe {
+    flex: 1;
+    margin-right: 15px;
+}

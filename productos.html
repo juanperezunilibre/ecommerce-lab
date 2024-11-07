@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link href="/assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/stylesProductos.css" rel="stylesheet">
     <title>Productos</title>
 </head>
+
 <body>
     <header>
         <!--<div class="diagonal-left"></div>-->
         <!--<div class="diagonal-right"></div>-->
-        <img src="assets/img/ecommerce.png" alt="Logo" width="100" height="100">
+        <img src="https://paradisefoundshirts.com/cdn/shop/files/paradisefoundhawaii-logo-gray_0678663d-8f70-43fa-8c1d-bc5355ad6211.png?v=1617665742&width=180" alt="Logo" width="100" height="100">
         <button class="btn btn-outline-dark btn-lg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
             <i class="fa fa-bars"></i>
         </button>
@@ -23,10 +26,11 @@
                 <button class="btn btn-outline-secondary" type="button">Search</button>
             </div>
         </div>
+
         <div class="user-menu">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                    Hola, Incia sesión
+                    Hola, Inicia sesión
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
@@ -39,81 +43,244 @@
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
         </div>
-
     </header>
-    <main>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5> <button type="button"
-                    class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <a href="index.html">
-                    <i class="fa fa-user"></i>
-                    Inicio
-                </a>
-                <a href="productos.html">
-                    <i class="fa fa-question"></i>
-                    Productos
-                </a>
-                <a href="compras.html">
-                    <i class="fa fa-question"></i>
-                    Compras
-                </a>
-                <a href="contacto.html">
-                    <i class="fa fa-phone"></i>
-                    Contacto
-                </a>
-                <a href="contacto.html">
-                    <i class="fa fa-briefcase"></i>
-                    Acerca de
-                </a>
-            </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        <div class="offcanvas-body">
+            <a href="index.html">
+                <i class="fa fa-user"></i> Inicio
+            </a>
+            <a href="productos.html">
+                <i class="fa fa-question"></i> Productos
+            </a>
+            <a href="compras.html">
+                <i class="fa fa-question"></i> Compras
+            </a>
+            <a href="contacto.html">
+                <i class="fa fa-phone"></i> Contacto
+            </a>
+            <a href="contacto.html">
+                <i class="fa fa-briefcase"></i> Acerca de
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <section class="productos-grid">
+            <div class="card" style="width: 18rem;">
+                <img src="https://paradisefoundshirts.com/cdn/shop/products/pfms-ohia-black.jpg?v=1653527035&width=540"
+                    class="card-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Ohia Black</h5>
+                    <p class="card-text">Feel like you're on a night stroll through lush tropical garden in this Ohia
+                        Hawaiian shirt in black.</p>
+                    <div class="price-content">
+                        <span>$100.00</span>
+                        <span>$125.00</span>
+                    </div>
+                    <div class="star-content">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="d-grid">
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://paradisefoundshirts.com/cdn/shop/products/pfms-cabana-palms-navy.jpg?v=1681949593&width=540"
+                    class="card-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cabana Palms Navy</h5>
+                    <p class="card-text">Lounge around in cool island style in this Cabana Palms Navy Hawaiian Shirt
+                        that is sure to showcase your chillin' vibe.</p>
+                    <div class="price-content">
+                        <span>$100.00</span>
+                        <span>$125.00</span>
+                    </div>
+                    <div class="star-content">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="d-grid">
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://paradisefoundshirts.com/cdn/shop/files/pfms-fine-flamingos-black.jpg?v=1710546855&width=540"
+                    class="card-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Fine flamingo Midnight</h5>
+                    <p class="card-text">Feel like you're on a night stroll through lush tropical garden in this Ohia
+                        Hawaiian shirt in black.
+                    </p>
+                    <div class="price-content">
+                        <span>$100.00</span>
+                        <span>$125.00</span>
+                    </div>
+                    <div class="star-content">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="d-grid">
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://paradisefoundshirts.com/cdn/shop/products/pfms-calla-lily-purple.jpg?v=1657329868&width=1800"
+                    class="card-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Calla Lily Purple</h5>
+                    <p class="card-text">This shirt was worn by Tom Selleck in the original TV show Magnum PI. It's not
+                        as iconic as the red Magnum PI shirt, but we still think it's pretty cool.</p>
+                    <div class="price-content">
+                        <span>$100.00</span>
+                        <span>$125.00</span>
+                    </div>
+                    <div class="star-content">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="d-grid">
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://paradisefoundshirts.com/cdn/shop/products/pfms-hilo-white.jpg?v=1667595440&width=540"
+                    class="card-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Hilo White</h5>
+                    <p class="card-text">Feel refreshed in this cool Hilo print featuring crisp colorful flowers and
+                        leaves on an off-white background. The colors and design give this shirt a bit of a retro feel
+                        to it. </p>
+                    <div class="price-content">
+                        <span>$100.00</span>
+                        <span>$125.00</span>
+                    </div>
+                    <div class="star-content">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="d-grid">
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://paradisefoundshirts.com/cdn/shop/products/pfms-ohia-black.jpg?v=1653527035&width=540"
+                    class="card-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Ohia Black</h5>
+                    <p class="card-text">Feel like you're on a night stroll through lush tropical garden in this Ohia
+                        Hawaiian shirt in black.</p>
+                    <div class="price-content">
+                        <span>$100.00</span>
+                        <span>$125.00</span>
+                    </div>
+                    <div class="star-content">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="d-grid">
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://paradisefoundshirts.com/cdn/shop/products/pfms-ohia-black.jpg?v=1653527035&width=540"
+                        class="card-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ohia Black</h5>
+                        <p class="card-text">Feel like you're on a night stroll through lush tropical garden in this
+                            Ohia
+                            Hawaiian shirt in black.</p>
+                        <div class="price-content">
+                            <span>$100.00</span>
+                            <span>$125.00</span>
+                        </div>
+                        <div class="star-content">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="d-grid">
+                            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        </div>
+                    </div>
+        </section>
     </main>
-    
-</body>
-<footer>
-    <div>
-        <strong>Te ayudamos</strong>
-        <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-        </ul>
-    </div>
-    <div>
-        <strong>Te ayudamos</strong>
-        <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-        </ul>
-    </div>
-    <div>
-        <strong>Te ayudamos</strong>
-        <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-        </ul>
-    </div>
-    <div>
-        <strong>Te ayudamos</strong>
-        <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-        </ul>
-    </div>
-</footer>
+
+    <footer>
+        <div>
+            <strong>Te ayudamos</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+            </ul>
+        </div>
+        <div>
+            <strong>Te ayudamos</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+            </ul>
+        </div>
+        <div>
+            <strong>Te ayudamos</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+            </ul>
+        </div>
+        <div>
+            <strong>Te ayudamos</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+            </ul>
+        </div>
+    </footer>
+
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
