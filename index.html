@@ -5,14 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO E-COMMERCE</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+<header>
+    <img src="assets/img/pngwing.com%20(30).png" alt="Logo" width="100">
+
+    <button class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
+        <i class="fa fa-bars-progress"></i>
+    </button>
+
+    <div class="search-contenedor">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar" aria-label="Recipient's username"
+                   aria-describedby="button-addon2">
+            <button class="btn btn-outline-dark" type="button" id="button-addon2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="user-menu">
+        <div class="dropdown">
+            <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Hola, inicia sesión
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+                <li><a class="dropdown-item" href="#">Registrarse</a></li>
+            </ul>
+        </div>
+        <a href="#">Mis Compras</a>
+        <button class="btn btn-outline-dark">
+            <i class="fa fa-heart"></i>
+        </button>
+        <a href="#" class="btn btn-outline-dark">
+            <i class="fa fa-shopping-cart"></i>
+        </a>
+    </div>
+
+</header>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar-menu" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
+            etc.
+        </div>
+        <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<main>
     <h1>
         Mi Primer E-commerce
     </h1>
 
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu urna molestie, fermentum lectus nec, blandit risus. Mauris vulputate urna in aliquam fermentum. Donec eu tempus tellus. Nullam ac erat sodales, hendrerit turpis ac, pretium mi. Nulla viverra augue et mauris mollis, quis dignissim magna aliquam. Maecenas tincidunt faucibus odio ac dapibus. In hac habitasse platea dictumst. Cras tristique risus tincidunt, bibendum augue in, vulputate nibh. Morbi condimentum purus quis nunc blandit, vitae pellentesque velit finibus. Cras eleifend vel odio quis vehicula.
+    </p>
+</main>
+
+<footer>
+    <div>
+        <strong>Te ayudamos</strong>
+        <ul>
+            <li><a href="#">Elemento 1</a></li>
+            <li><a href="#">Elemento 2</a></li>
+            <li><a href="#">Elemento 3</a></li>
+            <li><a href="#">Elemento 4</a></li>
+            <li><a href="#">Elemento 5</a></li>
+            <li><a href="#">Elemento 6</a></li>
+        </ul>
+    </div>
+    <div>
+        <strong>Se parte de nosotros</strong>
+        <ul>
+            <li><a href="#">Elemento 1</a></li>
+            <li><a href="#">Elemento 2</a></li>
+            <li><a href="#">Elemento 3</a></li>
+            <li><a href="#">Elemento 4</a></li>
+            <li><a href="#">Elemento 5</a></li>
+            <li><a href="#">Elemento 6</a></li>
+        </ul>
+    </div>
+    <div>
+        <strong>Responsabilidad Social</strong>
+        <ul>
+            <li><a href="#">Elemento 1</a></li>
+            <li><a href="#">Elemento 2</a></li>
+            <li><a href="#">Elemento 3</a></li>
+            <li><a href="#">Elemento 4</a></li>
+            <li><a href="#">Elemento 5</a></li>
+            <li><a href="#">Elemento 6</a></li>
+        </ul>
+    </div>
+    <div>
+        <strong>Preguntas Frecuentes</strong>
+        <ul>
+            <li><a href="#">Elemento 1</a></li>
+            <li><a href="#">Elemento 2</a></li>
+            <li><a href="#">Elemento 3</a></li>
+            <li><a href="#">Elemento 4</a></li>
+            <li><a href="#">Elemento 5</a></li>
+            <li><a href="#">Elemento 6</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
