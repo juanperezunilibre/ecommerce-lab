@@ -63,3 +63,31 @@ footer div strong{
     color: var(--color);
 }
 
+/*Reto4*/
+
+.offcanvas-body a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    color: #0a3622;
+    font-size: 18px;
+}
+
+.offcanvas-body a:hover{
+    background-color: #0a3622;
+    color: white;
+    border-radius: 5px;
+    transition: .3s ease all;
+}
+
+.carousel-item img{
+    height: 250px;
+    object-fit: none;
+}
+
+.d-block{
+    width: 2500px;
+
+}

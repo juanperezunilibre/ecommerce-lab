@@ -55,32 +55,63 @@
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+
+<!--Reto4 -
+comentarios: ctrl+k+c -->
+
     <div class="offcanvas-body">
-        <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
-            etc.
-        </div>
-        <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-        </div>
+        <a href="/">
+            <i class="fa fa-home"></i>
+            Inicio
+        </a>
+        <a href="/categories">
+            <i class="fa fa-sitemap"></i>
+            Categorías
+        </a>
+        <a href="/about-us">
+            <i class="fa fa-question"></i>
+            ¿Quiénes Somos?
+        </a>
+        <a href="/contact-us">
+            <i class="fa fa-phone"></i>
+            Contáctanos
+        </a>
+        <a href="/work-with-us">
+            <i class="fa fa-briefcase"></i>
+            Trabaja con nosotros
+        </a>
     </div>
 </div>
 
 <main>
-    <h1>
-        Mi Primer E-commerce
-    </h1>
 
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu urna molestie, fermentum lectus nec, blandit risus. Mauris vulputate urna in aliquam fermentum. Donec eu tempus tellus. Nullam ac erat sodales, hendrerit turpis ac, pretium mi. Nulla viverra augue et mauris mollis, quis dignissim magna aliquam. Maecenas tincidunt faucibus odio ac dapibus. In hac habitasse platea dictumst. Cras tristique risus tincidunt, bibendum augue in, vulputate nibh. Morbi condimentum purus quis nunc blandit, vitae pellentesque velit finibus. Cras eleifend vel odio quis vehicula.
-    </p>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://st5.depositphotos.com/16122460/68420/i/600/depositphotos_684201086-stock-photo-different-pet-food-accessories-isolated.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://st5.depositphotos.com/16122460/62570/i/600/depositphotos_625708678-stock-photo-flat-lay-composition-pet-toys.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://st4.depositphotos.com/16122460/20706/i/600/depositphotos_207069118-stock-photo-accessories-dog-white-background-pet.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
 </main>
 
 <footer>
