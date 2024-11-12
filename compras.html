@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link href="/assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/Compras.css" rel="stylesheet">
     <title>Compras</title>
 </head>
+
 <body>
     <header>
         <!--<div class="diagonal-left"></div>-->
         <!--<div class="diagonal-right"></div>-->
-        <img src="https://paradisefoundshirts.com/cdn/shop/files/paradisefoundhawaii-logo-gray_0678663d-8f70-43fa-8c1d-bc5355ad6211.png?v=1617665742&width=180" alt="Logo" width="100" height="100">
+        <img src="https://paradisefoundshirts.com/cdn/shop/files/paradisefoundhawaii-logo-gray_0678663d-8f70-43fa-8c1d-bc5355ad6211.png?v=1617665742&width=180"
+            alt="Logo" width="100" height="100">
         <button class="btn btn-outline-dark btn-lg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
             <i class="fa fa-bars"></i>
         </button>
@@ -29,8 +33,8 @@
                     Hola, Incia sesión
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
-                    <li><a class="dropdown-item" href="#">Registrarse</a></li>
+                    <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
+                    <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
                 </ul>
             </div>
             <a href="#">Mis compras</a>
@@ -41,36 +45,167 @@
         </div>
 
     </header>
-    <main>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5> <button type="button"
-                    class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <a href="index.html">
-                    <i class="fa fa-user"></i>
-                    Inicio
-                </a>
-                <a href="productos.html">
-                    <i class="fa fa-question"></i>
-                    Productos
-                </a>
-                <a href="compras.html">
-                    <i class="fa fa-question"></i>
-                    Compras
-                </a>
-                <a href="contacto.html">
-                    <i class="fa fa-phone"></i>
-                    Contacto
-                </a>
-                <a href="contacto.html">
-                    <i class="fa fa-briefcase"></i>
-                    Acerca de
-                </a>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5> <button type="button"
+                class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a href="index.html">
+                <i class="fa fa-user"></i>
+                Inicio
+            </a>
+            <a href="productos.html">
+                <i class="fa fa-question"></i>
+                Productos
+            </a>
+            <a href="compras.html">
+                <i class="fa fa-question"></i>
+                Compras
+            </a>
+            <a href="contacto.html">
+                <i class="fa fa-phone"></i>
+                Contacto
+            </a>
+            <a href="contacto.html">
+                <i class="fa fa-briefcase"></i>
+                Acerca de
+            </a>
+        </div>
+    </div>
+    <!--Fin del menu-->
+
+    <!--Carrito de compras-->
+    <div class="main-body-container">
+        <div class="">
+            <div class="main-filters-container">
+                <h1>Categorias</h1>
+
+                <ul class="filters-container">
+                    <li>
+                        <a href="#" class="#">
+                            Genero
+                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="#">
+                            Ventas
+                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="#">
+                            Productos
+                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                    </li>
+                </ul>
+
             </div>
         </div>
-    </main>
+
+        <div class="products-container"></div>
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const baseDeDatos = [
+                    {
+                        id: 1,
+                        nombre: "Ohia Black",
+                        precio: 100,
+                        imagen: "https://paradisefoundshirts.com/cdn/shop/products/pfms-ohia-black.jpg?v=1653527035&width=540",
+                        descripcion: "Feel like you're on a night stroll through lush tropical garden in this Ohia Hawaiian shirt in black."
+                    },
+                    {
+                        id: 2,
+                        nombre: "Cabana Palms Navy",
+                        precio: 100,
+                        imagen: "https://paradisefoundshirts.com/cdn/shop/products/pfms-cabana-palms-navy.jpg?v=1681949593&width=540",
+                        descripcion: "Lounge around in cool island style in this Cabana Palms Navy Hawaiian Shirt that is sure to showcase your chillin' vibe."
+                    },
+                    {
+                        id: 3,
+                        nombre: "Cabana Palms Navy",
+                        precio: 100,
+                        imagen: "https://paradisefoundshirts.com/cdn/shop/products/pfms-cabana-palms-navy.jpg?v=1681949593&width=540",
+                        descripcion: "Lounge around in cool island style in this Cabana Palms Navy Hawaiian Shirt that is sure to showcase your chillin' vibe."
+                    }
+                ];
+
+                let carrito = [];
+                const DOMItem = document.querySelector("#items");
+
+                const DOMContenedorProductos = document.querySelector(".products-container");
+                DOMContenedorProductos.classList.add("main-products-container");
+
+                const DOMCarrito = document.querySelector("#carrito");
+                const DOMTotal = document.querySelector("#total");
+                const DOMbotonVaciar = document.querySelector("#boton-vaciar");
+
+                const RenderizarProductos = () => {
+                    baseDeDatos.forEach((item) => {
+                        const contenedorPadre = document.createElement("div");
+                        contenedorPadre.classList.add("card");
+
+                        const contenedorCard = document.createElement("div");
+                        contenedorCard.classList.add("card-body");
+
+                        const titulo = document.createElement("h6");
+                        titulo.classList.add("card-title");
+                        titulo.textContent = item.nombre;
+
+                        const imagen = document.createElement("img");
+                        imagen.classList.add("img-fluid");
+                        imagen.setAttribute("src", item.imagen);
+
+                        const textoPrecio = document.createElement("p");
+                        textoPrecio.classList.add("card-text");
+                        textoPrecio.textContent = `${item.precio}€`;
+
+                        const descripcion = document.createElement("p");
+                        descripcion.classList.add("card-text");
+                        descripcion.textContent = item.descripcion;
+
+                        const botonAgregarCarrito = document.createElement("button");
+                        botonAgregarCarrito.classList.add("btn", "btn-primary");
+                        botonAgregarCarrito.textContent = "Agregar al carrito";
+                        botonAgregarCarrito.setAttribute("Marcador", item.id);
+
+
+                        contenedorCard.appendChild(titulo);
+                        contenedorCard.appendChild(imagen);
+                        contenedorCard.appendChild(textoPrecio);
+                        contenedorCard.appendChild(descripcion);
+                        contenedorCard.appendChild(botonAgregarCarrito);
+
+                        contenedorPadre.appendChild(contenedorCard);
+                        DOMContenedorProductos.appendChild(contenedorPadre);
+                    })
+                }
+                RenderizarProductos();
+            });
+        </script>
+        <!--Carrito-->
+        <div class="carrito">
+            <div class="carrito-info-container<">
+
+                <main id="" class=""></main>
+
+                <aside class="">
+                    <h3>Carrito de compras</h3>
+                    <ul id="carrito" class=""></ul>
+
+                    <p>Total:</p>
+                    <button class="vaciar">Vaciar</button>
+                    <button class="pagar">Pagar</button>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <!--Fin de carrito de compras-->
+    <!--Comienzo del footer-->
     <footer>
         <div>
             <strong>Te ayudamos</strong>
@@ -115,4 +250,5 @@
     </footer>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
