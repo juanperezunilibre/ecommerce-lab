@@ -75,11 +75,6 @@ footer a {
     transition: .3s ease all;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-}
 
 
 #whatsapp-button {

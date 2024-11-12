@@ -1,0 +1,19 @@
+.price-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.card {
+    width: 18rem;
+}
+
+.star-content {
+
+}
