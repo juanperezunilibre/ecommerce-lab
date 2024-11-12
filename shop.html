@@ -1,125 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Shop</title>
     <link rel="stylesheet" href="Assets/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="Assets/CSS/Styles.css">
+    <link rel="stylesheet" href="Assets/CSS/shop.css">
 </head>
-<body>
-<header>
-    <a href="index.html">
-    <img src="Assets/img/Logo%20Ocean%20Nomads%20fondo%20aguamarina.png" alt="">
 
-    <button class="btn btn-outline-dark btn-lg" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
-        <i class="fa fa-bars"></i>
-    </button>
-    <div class="search-contenedor">
-        <div class="input-group input-group-lg">
-            <input type="text" class="form-control" placeholder="Buscar..." aria-label="search"
-                   aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <i class="fa-solid fa-magnifying-glass"></i>
+<body>
+    <header>
+        <a href="index.html" class="flex">
+            <img src="Assets/img/Logo%20Ocean%20Nomads%20fondo%20aguamarina.png" alt="">
+
+            <button class="btn btn-outline-dark btn-lg" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
+                <i class="fa fa-bars"></i>
             </button>
+            <div class="search-contenedor">
+                <div class="input-group input-group-lg">
+                    <input type="text" class="form-control" placeholder="Buscar..." aria-label="search"
+                        aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="user-menu">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Hola, Inicia sesión
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+                        <li><a class="dropdown-item" href="#">Registrarme</a></li>
+                    </ul>
+                </div>
+                <a href="#">Mis compras</a>
+                <button class="btn btn-secondary">
+                    <i class="fa fa-heart"></i>
+                </button>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fa fa-cart-shopping"></i>
+                </a>
+            </div>
+
+    </header>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar-menu" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a href="index.html">
+                <i class="fa fa-home"></i>
+                Home
+            </a>
+            <a href="aboutus.html">
+                <i class="fa fa-question"></i>
+                About us
+            </a>
+            <a href="products.html">
+                <i class="fa fa-box-archive"></i>
+                Products
+            </a>
+            <a href="shop.html">
+                <i class="fa fa-bag-shopping"></i>
+                Shop
+            </a>
+            <a href="contactus.html">
+                <i class="fa fa-phone"></i>
+                Contact us
+            </a>
+
         </div>
     </div>
-    <div class="user-menu">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                Hola, Inicia sesión
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
-                <li><a class="dropdown-item" href="#">Registrarme</a></li>
+    <!--Categorías-->
+    <div class="main-body-container">
+        <div class="">
+            <div class="main-filters-container">
+                <h1>Categorías</h1>
+                <ul class="filters-container">
+                    <li>
+                        <a href="#" class="">
+                            Género
+                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+
+                        </a>
+                        <a href="#" class="">
+                            Ventas
+                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+
+                        </a>
+                        <a href="#" class="">
+                            Producto
+                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="products-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const baseDeDatos = [
+                {
+                    id: 1,
+                    nombre: "Curaçao",
+                    precio: 1400,
+                    precio_original: 1560,
+                    imagen:"Assets/img/Curacao.jpg",
+                    descripcion: "",
+
+                },
+                {
+                    id: 2,
+                    nombre: "Maldivas",
+                    precio: 1900,
+                    precio_original: 2100,
+                    imagen:"Assets/img/Curacao.jpg",
+                    descripcion: "",
+                },
+            ]
+
+            let carrito = [];
+            const DOMItem = document.querySelector("#items")
+            const DOMcontenedorProductos = document.querySelector("#products-container")
+            DOMcontenedorProductos.classList.add("main-products-container")
+            const DOMCarrito = document.querySelector("#carrito")
+            const DOMTotal = document.querySelector("#total")
+            const DOMBotonVaciar = document.querySelector("#boton-vaciar")
+
+            const renderizarProductos = () => {
+                baseDeDatos.forEach((item) => {
+
+                    const contenedorPadre = document.createElement("div")
+                    contenedorPadre.classList.add("card")
+
+                    const contenedorCard = createElement("div")
+                    contenedorCard.classList.add("card-body")
+
+                    const titulo = createElement("h5")
+                    titulo.classList.add("card-title")
+                    titulo.textContent = item.nombre
+
+                    const imagen = document.createElement("img")
+                    imagen.classList.add("card-img-top")
+                    imagen.setAttribute('src', item.imagen)
+
+                    const textoPrecio = document.createElement("div")
+                    textoPrecio.classList.add("price-content")
+                    textoPrecio.textContent = item.precio
+
+                    const textoPrecioOriginal = document.createElement("span")
+                    textoPrecioOriginal.classList.add("price-content")
+                    textoPrecioOriginal.textContent = item.precio_original
+
+                    const botonAgregarCarrito = document.createElement("button");
+                    botonAgregarCarrito.classList.add('btn', "btn-primary")
+                    botonAgregarCarrito.textContent = "Agregar al carrito"
+                    botonAgregarCarrito.setAttribute("Marcador", item.id)
+                   // botonAgregarCarrito.addEventListener("click", anadirProductosAlCarrito)
+
+
+                   contenedorCard.appendChild(titulo)
+                    contenedorCard.appendChild(imagen)
+                    contenedorCard.appendChild(textoPrecio)
+                    contenedorCard.appendChild(botonAgregarCarrito)
+                
+                    contenedorPadre.appendChild(ContenedorCard)
+                    DOMcontenedorProductos.appendChild(contenedorPadre)
+                    
+
+
+                })
+            }
+
+            renderizarProductos();
+                
+        })
+    </script>
+
+    <!---Carrito de compras-->
+    <div class="carrito-container">
+        <div class="carrito-info-container">
+            <main id="items" class=""></main>
+            <aside class="carrito-info">
+                <h3>Carrito</h3>
+                <ul id="carrito" class=""></ul>
+                <p id="total">Total: </p>
+                <button id="boton-vaciar" class="vaciar">Vaciar</button>
+                <button class="pagar">Pagar</button>
+            </aside>
+
+        </div>
+    </div>
+
+    <!---Fin carrito de compras-->
+
+    <footer>
+        <div>
+            <strong>Sé parte de Ocean Nomads Diving Club</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+                <li><a href="#">Elemento 6</a></li>
             </ul>
         </div>
-        <a href="#">Mis compras</a>
-        <button class="btn btn-secondary">
-            <i class="fa fa-heart"></i>
-        </button>
-        <a href="#" class="btn btn-secondary">
-            <i class="fa fa-cart-shopping"></i>
-        </a>
-    </div>
-
-</header>
-<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar-menu" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header"><h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <a href="index.html">
-            <i class="fa fa-home"></i>
-            Home
-        </a>
-        <a href="aboutus.html">
-            <i class="fa fa-question"></i>
-            About us
-        </a>
-        <a href="products.html">
-            <i class="fa fa-box-archive"></i>
-            Products
-        </a>
-        <a href="shop.html">
-            <i class="fa fa-bag-shopping"></i>
-            Shop
-        </a>
-        <a href="contactus.html">
-            <i class="fa fa-phone"></i>
-            Contact us
-        </a>
-
-    </div>
-</div>
-
-<footer>
-    <div>
-        <strong>Sé parte de Ocean Nomads Diving Club</strong>
-        <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-            <li><a href="#">Elemento 6</a></li>
-        </ul>
-    </div>
-    <div>
-        <strong>Nuestros Servicios</strong>
-        <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-            <li><a href="#">Elemento 6</a></li>
-        </ul>
-    </div>
-    <div>
-        <strong>Social Media</strong>
-        <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-            <li><a href="#">Elemento 6</a></li>
-        </ul>
-    </div>
-    <div>
-        <strong>Contáctanos</strong>
-        <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-            <li><a href="#">Elemento 6</a></li>
-        </ul>
-    </div>
-</footer>
-<script src="Assets/JS/bootstrap.bundle.min.js"></script>
+        <div>
+            <strong>Nuestros Servicios</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+                <li><a href="#">Elemento 6</a></li>
+            </ul>
+        </div>
+        <div>
+            <strong>Social Media</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+                <li><a href="#">Elemento 6</a></li>
+            </ul>
+        </div>
+        <div>
+            <strong>Contáctanos</strong>
+            <ul>
+                <li><a href="#">Elemento 1</a></li>
+                <li><a href="#">Elemento 2</a></li>
+                <li><a href="#">Elemento 3</a></li>
+                <li><a href="#">Elemento 4</a></li>
+                <li><a href="#">Elemento 5</a></li>
+                <li><a href="#">Elemento 6</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="Assets/JS/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
