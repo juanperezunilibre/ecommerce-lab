@@ -4,6 +4,12 @@
     gap: 1px;
 }
 
+.price-content span:nth-child(1) {
+    color: #666;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

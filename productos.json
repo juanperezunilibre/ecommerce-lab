@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "nombre": "Camisa a rayas",
+    "descripcion": "Camisa tropial playera hombre",
+    "imagen": "https://venanmodahombre.es/cdn/shop/files/4.jpg?v=1687974591",
+    "precio": 80000,
+    "descuento": 50,
+    "valoracion": 4
+  },
+  {
+    "id": 2,
+    "nombre": "Jeans",
+    "descripcion": "Jeans ajustados",
+    "imagen": "https://rossiljeans.com/wp-content/uploads/2021/10/jeans-para-mujer-2-500x500.jpg",
+    "precio": 90000,
+    "descuento": 30,
+    "valoracion": 1
+  },
+  {
+    "id": 3,
+    "nombre": "Camiseta Polo",
+    "descripcion": "Camiseta Polo",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_821325-MCO76743483074_062024-O.webp",
+    "precio": 50000,
+    "descuento": 10,
+    "valoracion": 2
+  }
+]
