@@ -1,18 +1,41 @@
-const productos = [
-    {
-        id: 1,
-        imagen: "",
-        nombre: "Curaçao",
-        descripcion: "Come join us to explore the island and experience its vibrant marine life and crystal clear waters, and be ready to live a memorable underwater adventure!",
-        precio: 1400,
-        precio_original: 1560,
-        valoracion: 4,
-    }
-]
+import productos from "/productos.json" with {type: "json"};
+import {agregarProducto, carrito} from "/Assets/JS/localstorage.js"
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    for (let producto of productos) {
+        paintCard(producto)
+    }
+})
+
+//creamos la valoración de estrellas
+
+function valoracionProducto(numero) {
+    let rate = document.createElement("div")
+    rate.classList.add("star-content")
+
+    //bucle para no repetir cada estrella
+
+    for (let i = 0; i < 5; i++) {
+        let star = document.createElement("i")
+        if (i < numero) {
+            star.classList.add("fa-solid")
+        } else {
+            star.classList.add("fa-regular")
+        }
+        star.classList.add("fa-star")
+        rate.appendChild(star)
+    }
+
+
+    return rate
+}
+
+function paintCard(producto) {
+
     //Se referencia al section que contiene los productos
+
     let productGrid = document.querySelector("#products-grid");
 
     //creamos la card (contenedor)
@@ -23,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //creamos la imagen
     let imagen = document.createElement("img")
-    imagen.src = "Assets/img/Curacao.jpg"
+    imagen.src = producto.imagen
     imagen.classList.add("card-img-top")
     card.appendChild(imagen)
 
@@ -35,13 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
     //creamos el título de la card
     let cardTitle = document.createElement("h5")
     cardTitle.classList.add("card-title")
-    cardTitle.innerText = "Curaçao"
+    cardTitle.innerText = producto.nombre
     cardBody.appendChild(cardTitle)
 
     //creamos la descripción de la card
     let cardDescription = document.createElement("p")
     cardDescription.classList.add("card-text")
-    cardDescription.innerText = "Come join us to explore the island and experience its vibrant marine life and crystal clear waters, and be ready to live a memorable underwater adventure!"
+    cardDescription.innerText = producto.descripcion
     cardBody.appendChild(cardDescription)
 
     //creamos el contenedor de precios de la card
@@ -53,33 +76,56 @@ document.addEventListener("DOMContentLoaded", function () {
     let precio = document.createElement("span")
     let precioOriginal = document.createElement("span")
 
-    precio.innerText = "1400 USD"
-    precioOriginal.innerText = "1560 USD"
+    precio.innerText = formatoMoneda(producto.precio)
+    precioOriginal.innerText = formatoMoneda(producto.precio_original)
     priceWrapper.appendChild(precio)
     priceWrapper.appendChild(precioOriginal)
 
-    //creamos la calificación de estrellas
-    let rate = document.createElement("div")
-    rate.classList.add("star-content")
-    cardBody.appendChild(rate)
+    // valoración
+    let rating = valoracionProducto(producto.valoracion)
+    cardBody.appendChild(rating)
 
-    //bucle para no repetir cada estrella
-    for (let i = 0; i < 5; i++) {
-         let star = document.createElement("i")
-    star.classList.add("fa")
-    star.classList.add("fa-star")
-    rate.appendChild(star)
+    // creamos botón más info
+    let buttonInfo = document.createElement("button")
+    buttonInfo.classList.add("btn","btn-primary", "btn-info-color")
+    buttonInfo.innerText = "Más información"
+    cardBody.appendChild(buttonInfo)
 
-}
+
+
     //creamos el botón de agregar al carrito
+
+    let buttonWrapper = document.createElement("div")
+    buttonWrapper.classList.add("d-grid")
+
     let button = document.createElement("button")
-    button.classList.add("btn")
-    button.classList.add("btn-primary")
+    button.classList.add("btn","btn-primary", "btn-carrito-color")
     button.innerText = "Agregar al carrito"
-    cardBody.appendChild(button)
+    button.addEventListener("click", function () {
+        onProductClick(producto)
+    })
+
+    buttonWrapper.appendChild(button)
+    cardBody.appendChild(buttonWrapper)
+
 
 
     // añadimos la card a la grilla de productos
     productGrid.appendChild(card)
-})
 
+}
+
+function formatoMoneda(numero) {
+    const formatter = Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        currencyDisplay: 'code',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })
+    return formatter.format(numero)
+}
+
+function onProductClick(producto) {
+    agregarProducto(producto)
+}
