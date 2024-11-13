@@ -57,20 +57,10 @@ document.addEventListener("DOMContentLoaded", function() {
     priceWrapper.append(price1, price2)
 
     // valoracion
-    let ratingWrapper = document.createElement("div")
-    ratingWrapper.classList.add("star-content")
-    cardBody.appendChild(ratingWrapper)
-
-    for (let i = 0; i < 5; i++) {
-        let star = document.createElement("i")
-        star.classList.add("fa")
-        star.classList.add("fa-star")
-        ratingWrapper.appendChild(star)
-    }
-
+    let rating = valoracionProducto(3)
+    cardBody.appendChild(rating)
 
     // boton
-
     let buttonWrapper = document.createElement("div")
     buttonWrapper.classList.add("d-grid")
 
@@ -85,7 +75,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // añadimos la card a la grilla de productos
     grillaProductos.appendChild(card)
-
 })
+
+function valoracionProducto(numero) {
+    let ratingWrapper = document.createElement("div")
+    ratingWrapper.classList.add("star-content")
+
+    for (let i = 0; i < 5; i++) {
+        let star = document.createElement("i")
+
+        if (i < numero) {
+            star.classList.add("fa-solid")
+        } else {
+            star.classList.add("fa-regular")
+        }
+
+        star.classList.add("fa-star")
+        ratingWrapper.appendChild(star)
+    }
+
+    return ratingWrapper
+}
 
 
