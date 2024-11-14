@@ -1,5 +1,6 @@
 import productos from "/productos.json" with {type: "json"};
-import {agregarProducto, carrito} from "/Assets/JS/localstorage.js"
+import carrito from "./localstorage.js";
+import {formatoMoneda} from "./utils.js";
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -115,17 +116,8 @@ function paintCard(producto) {
 
 }
 
-function formatoMoneda(numero) {
-    const formatter = Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-        currencyDisplay: 'code',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    })
-    return formatter.format(numero)
-}
+
 
 function onProductClick(producto) {
-    agregarProducto(producto)
+    carrito.agregarItem(producto)
 }
