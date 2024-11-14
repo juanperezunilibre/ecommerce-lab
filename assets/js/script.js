@@ -1,5 +1,6 @@
 import productos from "/productos.json" with { type: "json" };
-import {agregarProducto, carrito} from "/assets/js/localstorage.js"
+import Carrito from "./localstorage.js"
+import {formatoMoneda} from "./utils.js"
 
 document.addEventListener("DOMContentLoaded", function() {
     for (let producto of productos) {
@@ -68,8 +69,13 @@ function dibujarTarjeta(producto) {
     let price1 = document.createElement("span")
     let price2 = document.createElement("span")
 
-    price1.innerText = formatoMoneda(producto.precio)
-    price2.innerText = formatoMoneda(producto.precio - (producto.precio * producto.descuento / 100))
+    if (producto.descuento > 0) {
+        price1.innerText = formatoMoneda(producto.precio)
+        price2.innerText = formatoMoneda(producto.precio - (producto.precio * producto.descuento / 100))
+    } else {
+        price1.innerText = " "
+        price2.innerText = formatoMoneda(producto.precio)
+    }
     priceWrapper.append(price1, price2)
 
     // valoracion
@@ -96,20 +102,9 @@ function dibujarTarjeta(producto) {
     grillaProductos.appendChild(card)
 }
 
-function formatoMoneda(numero) {
-    const formatter = Intl.NumberFormat("es-CO", {
-        style: "currency",
-        currency: "COP",
-        currencyDisplay: 'code',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    })
-    return formatter.format(numero)
-}
-
 
 function onProductClick(producto) {
-   agregarProducto(producto)
+   Carrito.agregarItem(producto)
 }
 
 

@@ -1,0 +1,25 @@
+p {
+    margin: 0;
+}
+
+.card-body {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.card-body img {
+    width: 100px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#productos-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
