@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de | e-commerce lab</title>
+    <title>Carrito | e-commerce lab</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -15,7 +15,7 @@
     <header>
         <img src="../img/rb_2149496428.png" alt="logo" width="150">
 
-        <button class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
+        <button class="btn btn-outline-ligth" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
             <i class="fa-solid fa-bars"></i>
             Menú
         </button>
@@ -41,7 +41,9 @@
 
         <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="compras.html">
             Mis compras
-            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+        <a href="carrito.html" class="btn btn-secondary">
+            <i class="fa fa-cart-shopping"></i>
         </a>
 
     </header>
@@ -74,9 +76,12 @@
             </a>
         </div>
     </div>
+
     <main>
-        
+        <h1>Carrito de compras</h>
+        <section id="productos-carrito"></section>
     </main>
+    
     <footer>
         <div>
             <strong>Un titulo de footer</strong>
@@ -111,6 +116,6 @@
     </footer>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/carrito.js" type="module></script>
 </body>
 </html>

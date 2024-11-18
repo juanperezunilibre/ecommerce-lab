@@ -1,6 +1,6 @@
 import productos from "../pages/productos.json" with {type: "json"};
-// import Carrito from "../js/localstorage.js";
-import {agregarProducto, carrito} from "./localstorage.js";
+import Carrito from "./localstorage.js";
+import {formatoMoneda} from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   for (let producto of productos) {
@@ -8,6 +8,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+function valoracionProducto(numero) {
+  let ratingWrapper = document.createElement("div");
+  ratingWrapper.classList.add("star-content");
+
+  for (let i = 0; i < 5; i++) {
+    let star = document.createElement("i");
+
+    if (i < numero) {
+      star.classList.add("fa-solid");
+    } else {
+      star.classList.add("fa-regular");
+    };
+
+    star.classList.add("fa-star");
+
+    ratingWrapper.appendChild(star);
+  };
+
+  return ratingWrapper;
+};
 function dibujarTarjeta(producto) {
   // Se referencia al section que contiene los productos
   let grillaProductos = document.querySelector("#products-grid");
@@ -49,9 +69,13 @@ function dibujarTarjeta(producto) {
   let price = document.createElement("span");
   let discount = document.createElement("span");
 
-  price.innerText = formatoMoneda(producto.precio);
-  discount.innerText = formatoMoneda(producto.precio - (producto.precio * producto.descuento) / 100);
-
+  if (producto.descuento > 0) {
+    price.innerText = formatoMoneda(producto.precio);
+    discount.innerText = formatoMoneda(producto.precio - (producto.precio * producto.descuento) / 100);
+} else {
+    price.innerText = " "
+    discount.innerText = formatoMoneda(producto.precio)
+}
   priceWrapper.append(price, discount);
 
   // valoración
@@ -76,38 +100,6 @@ function dibujarTarjeta(producto) {
   grillaProductos.appendChild(card);
 };
 
-function formatoMoneda(numero) {
-  const formatter = Intl.NumberFormat("es-CO", {
-      style: "currency",
-      currency: "COP",
-      currencyDisplay: 'code',
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-  });
-  return formatter.format(numero);
-};
-
-function valoracionProducto(numero) {
-  let ratingWrapper = document.createElement("div");
-  ratingWrapper.classList.add("star-content");
-
-  for (let i = 0; i < 5; i++) {
-    let star = document.createElement("i");
-
-    if (i < numero) {
-      star.classList.add("fa-solid");
-    } else {
-      star.classList.add("fa-regular");
-    };
-
-    star.classList.add("fa-star");
-
-    ratingWrapper.appendChild(star);
-  };
-
-  return ratingWrapper;
-};
-
 function onProductClick(producto) {
-  agregarProducto(producto);
+  Carrito.agregarItem(producto);
 };

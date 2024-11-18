@@ -1,12 +1,14 @@
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
     gap: 10px;
 }
 
-.card{
+/* .card{
     width: 18rem;
-}
+} */
 .price-content {
     display: flex;
     flex-direction: column;
@@ -27,3 +29,14 @@
     margin: 5px 0;
 }
 
+@media screen and (min-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* Cuatro columnas en pantallas grandes */
+@media screen and (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
