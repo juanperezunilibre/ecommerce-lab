@@ -1,11 +1,11 @@
-let carrito = obtenerProductos()
+let carrito = obtenerProductos();
+
 function obtenerProductos() {
-    return JSON.parse(localStorage.getItem("carrito")) ?? [];
+  return JSON.parse(localStorage.getItem("carrito")) ?? [];
 }
+
 function agregarProducto(producto) {
-    localStorage.setItem("carrito", JSON.stringify(producto));
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-export {
-    carrito,
-    agregarProducto,
-}
+
+export { carrito, agregarProducto };

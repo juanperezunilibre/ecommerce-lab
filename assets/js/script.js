@@ -1,5 +1,6 @@
-import productos from "./productos.json" with {type: "json"};
-import {agregarProducto, carrito} from "../assets/js/localstorage.js";
+import productos from "../pages/productos.json" with {type: "json"};
+// import Carrito from "../js/localstorage.js";
+import {agregarProducto, carrito} from "./localstorage.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   for (let producto of productos) {
@@ -64,8 +65,7 @@ function dibujarTarjeta(producto) {
   let button = document.createElement("button");
   button.classList.add("btn", "btn-primary");
   button.innerHTML = "Agregar al carrito";
-
-  button.addEventListener("click", function () {
+  button.addEventListener("click", function (){
     onProductClick(producto);
   });
 
