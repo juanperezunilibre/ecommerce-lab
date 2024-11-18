@@ -23,3 +23,16 @@ p {
     flex-direction: column;
     gap: 15px;
 }
+
+main {
+    display: flex;
+    gap: 15px;
+}
+
+.products-container {
+    flex-grow: 1;
+}
+
+.cart-summary {
+    width: 500px;
+}

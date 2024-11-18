@@ -81,9 +81,52 @@
 </div>
 
 <main>
-    <h1>Carrito de compras</h1>
+    <div class="products-container">
+        <h2>Carrito de compras</h2>
+        <section id="productos-carrito"></section>
+    </div>
+    <div class="cart-summary">
+        <h2>Resumen de compra</h2>
 
-    <section id="productos-carrito"></section>
+        <b id="total-cart">Total: $0</b>
+
+        <div class="d-grid">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#payment">Pagar</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="payment" tabindex="-1" aria-labelledby="payment-button" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Pagar</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="payment-form">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="card-number" class="form-label">Número de tarjeta</label>
+                            <input type="text" name="card_number" class="form-control" id="card-number" placeholder="4242424242424242" pattern="\d{16}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="expire-date" class="form-label">Fecha de vencimiento</label>
+                            <input type="text" name="expire_date" class="form-control" id="expire-date" placeholder="01/29" pattern="\d{2}\/\d{2}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" name="cvv" class="form-control" id="cvv" pattern="\d{3}" placeholder="123" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Pagar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </main>
 
 <footer>

@@ -13,8 +13,7 @@ Carrito.agregarItem = function (producto) {
         Carrito.items.push({
             id: producto.id,
             nombre: producto.nombre,
-            precio: producto.precio,
-            descuento: producto.descuento,
+            precio: dto > 0 ? dto : producto.precio,
             imagen: producto.imagen,
             cantidad: 1,
             subtotal: dto > 0 ? dto : producto.precio,
@@ -27,6 +26,15 @@ Carrito.agregarItem = function (producto) {
 Carrito.eliminarItem = function (id) {
     Carrito.items = Carrito.items.filter((item) => item.id !== id);
     localStorage.setItem("carrito", JSON.stringify(Carrito.items));
+}
+
+Carrito.calcularPrecioTotal = function () {
+    let total = 0;
+    for (let item of Carrito.items) {
+        total += item.subtotal;
+    }
+    return total;
+    //return Carrito.items.reduce((acc, item) => acc + item.subtotal, 0);
 }
 
 export default Carrito;

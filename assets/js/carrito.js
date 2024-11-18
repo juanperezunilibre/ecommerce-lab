@@ -6,7 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let producto of Carrito.items) {
         pintarTarjeta(producto)
     }
+
+    actualizarPrecioTotal()
 })
+
+
+function actualizarPrecioTotal() {
+    let precioTotal = Carrito.calcularPrecioTotal()
+    let total = document.querySelector("#total-cart")
+    total.innerText = "Total: " + formatoMoneda(precioTotal)
+}
 
 
 function pintarTarjeta(producto) {
@@ -55,6 +64,7 @@ function pintarTarjeta(producto) {
     boton.addEventListener("click", function() {
         Carrito.eliminarItem(producto.id)
         productContainer.removeChild(card)
+        actualizarPrecioTotal()
     })
 
     let iconoEliminar = document.createElement("i")
@@ -69,3 +79,33 @@ function pintarTarjeta(producto) {
     // añadimos la card al section de productos
     productContainer.appendChild(card)
 }
+
+// pagar
+
+let form = document.querySelector("#payment-form")
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault() // evitamos que se recargue la pagina
+
+    // desectructurar los elemtos del formulario
+    let {card_number, expire_date, cvv} = form.elements
+    let precioTotal = Carrito.calcularPrecioTotal()
+
+    fetch("https://payment-processor-production.up.railway.app/api/v1/transaction?api_key=9b4fd34d-4295-4e65-a357-08608b9e6038", {
+        method: "POST",
+        body: JSON.stringify({
+            payment: {
+                credit_card: card_number.value,
+                expiration_date: expire_date.value,
+                cvv: cvv.value,
+            },
+            transaction: {
+                amount: precioTotal,
+                currency: "COP"
+            }
+        })
+    })
+        .then(res => res.json())
+        .then(data => console.log(data))
+
+})
