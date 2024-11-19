@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocean Nomads Travel & Diving Club</title>
+    <link rel="stylesheet" href="Assets/CSS/Styles.css">
     <link rel="stylesheet" href="Assets/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="Assets/CSS/Styles.css">
+
 
 </head>
 <body>
@@ -19,7 +20,7 @@
     </button>
     <div class="search-contenedor">
         <div class="input-group input-group-lg">
-            <input type="text" class="form-control" placeholder="Buscar..." aria-label="search"
+            <input type="text" class="form-control" placeholder="Search..." aria-label="search"
                    aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -30,17 +31,14 @@
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                Hola, Inicia sesión
+                My Profile
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
-                <li><a class="dropdown-item" href="register.html">Registrarme</a></li>
+                <li><a class="dropdown-item" href="login.html">Sign in</a></li>
+                <li><a class="dropdown-item" href="register.html">Don’t have an account? Create yours now</a></li>
             </ul>
         </div>
-        <a href="#">Mis compras</a>
-        <button class="btn btn-secondary">
-            <i class="fa fa-heart"></i>
-        </button>
+
         <a href="carrito.html" class="btn btn-secondary">
             <i class="fa fa-cart-shopping"></i>
         </a>
@@ -57,16 +55,16 @@
             Home
         </a>
         <a href="aboutus.html">
-            <i class="fa fa-question"></i>
+            <i class="fa fa-heart"></i>
             About us
         </a>
         <a href="products.html">
-            <i class="fa fa-box-archive"></i>
-            Products
+            <i class="fa-solid fa-location-dot"></i>
+            Experiences
         </a>
         <a href="shop.html">
-            <i class="fa fa-bag-shopping"></i>
-            Shop
+            <i class="fa-solid fa-water"></i>
+            Get certified
         </a>
         <a href="contactus.html">
             <i class="fa fa-phone"></i>
@@ -76,26 +74,39 @@
     </div>
 </div>
 
+<nav>
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About us</a>
+    <a href="products.html">Experiences</a>
+    <a href="shop.html">Get certified</a>
+    <a href="contactus.html">Contact us</a>
+
+</nav>
 
 <main>
     <h1>Ocean Nomads Travel & Diving Club</h1>
-    <p>
-        Sabemos que aman tanto como nosotros todo el merch Ocean Nomads. Es por esto que hemos
-        creado este canal para que puedas comprar nuestras colecciones aliadas con unas marcas increíbles.
 
-    </p>
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
 
-                <img src="Assets/img/image1.webp" class="d-block w-100" alt="...">
+                <h3  id="mision-title">Con Ocean Nomads</h3>
+                <img src="Assets/img/image2.webp" class="d-block w-100" alt="...">
+                <p id="mision-text">Nos enamoraremos del mar todos los días</p>
 
             </div>
             <div class="carousel-item">
-                <img src="Assets/img/image2.webp" class="d-block w-100" alt="...">
+
+                <img src="Assets/img/image3.webp" class="d-block w-100" alt="...">
+                <p id="experiences-text" >Conoce nuestras experiencias en Colombia y en el mundo entero y explora destinos
+                    increíbles con personas apasionadas por el mar</p>
+
             </div>
             <div class="carousel-item">
-                <img src="Assets/img/image3.webp" class="d-block w-100" alt="...">
+
+                <img src="Assets/img/image1.webp" class="d-block w-100" alt="...">
+                <p id="curses-text" >Certíficate con nosotros como Open Water Diver SSI y comienza a disfrutar el mar de otra manera</p>
+
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -114,47 +125,47 @@
     <div>
         <strong>Sé parte de Ocean Nomads Diving Club</strong>
         <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-            <li><a href="#">Elemento 6</a></li>
+            <li><a href="#">Cursos de nivel inicial</a></li>
+            <li><a href="#">Conviertete en un buzo avanzado</a></li>
+            <li><a href="#">¿Quieres hacer del buceo tu profesión?</a></li>
+            <li><a href="#">Viaja con nosotros</a></li>
+            <li><a href="#">Sé parte de nuestra comunidad</a></li>
+
         </ul>
     </div>
     <div>
         <strong>Nuestros Servicios</strong>
         <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-            <li><a href="#">Elemento 6</a></li>
+            <li><a href="#">Certificaciones SSI</a></li>
+            <li><a href="#">Scuba Skills Update</a></li>
+            <li><a href="#">Experiencias Nacionales</a></li>
+            <li><a href="#">Experiencias Internacionales</a></li>
+            <li><a href="#">Nuestra Merch</a></li>
+
         </ul>
     </div>
     <div>
         <strong>Social Media</strong>
         <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-            <li><a href="#">Elemento 6</a></li>
+            <li><a href="#">Síguenos en Instagram <i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#">Siguenos en Facebook <i class="fa-brands fa-facebook"></i></a></li>
+
         </ul>
     </div>
     <div>
         <strong>Contáctanos</strong>
         <ul>
-            <li><a href="#">Elemento 1</a></li>
-            <li><a href="#">Elemento 2</a></li>
-            <li><a href="#">Elemento 3</a></li>
-            <li><a href="#">Elemento 4</a></li>
-            <li><a href="#">Elemento 5</a></li>
-            <li><a href="#">Elemento 6</a></li>
+            <li><a href="contactus.html">Nuestros canales de comunicación</a></li>
+            <li><a href="#">Whatsapp <i class="fa-brands fa-whatsapp"></i></a></li>
+            <li><a href="#">Suscríbete a nuestro Newsletter</a></li>
+            <li><a href="#">Crea tu cuenta</a></li>
+
         </ul>
     </div>
+    <section class="copyright">
+        Todos los derechos reservados &copy; 2024
+
+    </section>
 
 </footer>
 <script src="Assets/JS/bootstrap.bundle.min.js"></script>
