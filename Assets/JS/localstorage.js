@@ -31,4 +31,12 @@ carrito.eliminarItem = function (id) {
     localStorage.setItem("carrito", JSON.stringify(carrito.items));
 }
 
+carrito.calcularPrecioTotal = function () {
+    let total = 0;
+    for (let item of carrito.items) {
+        total += item.subtotal;
+    }
+    return total;
+}
+
 export default carrito;

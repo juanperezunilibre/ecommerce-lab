@@ -1,12 +1,25 @@
 import carrito from "./localstorage.js";
 import {formatoMoneda} from "./utils.js";
 
-document.addEventListener("DOMContentLoaded", function() {
-    for(let producto of carrito.items){
+document.addEventListener("DOMContentLoaded", function () {
+    for (let producto of carrito.items) {
         pintarTarjeta(producto)
 
     }
+
+    actualizarPrecioTotal()
+
+
 })
+
+function actualizarPrecioTotal() {
+
+
+let precioTotal = carrito.calcularPrecioTotal()
+let total = document.querySelector("#total-cart")
+total.innerText = "Total: " + formatoMoneda(precioTotal)
+
+}
 
 function pintarTarjeta(producto) {
     let productContainer = document.querySelector("#productos-carrito")
@@ -21,7 +34,7 @@ function pintarTarjeta(producto) {
 
     //creamos la imagen
     let imagen = document.createElement("img")
-    imagen.src= producto.imagen
+    imagen.src = producto.imagen
     cardBody.appendChild(imagen)
 
     //creamos el contenedor de la info
@@ -52,10 +65,11 @@ function pintarTarjeta(producto) {
 
     // al hacer click en el boton eliminamos el item del carrito y de la vista
 
-   boton.addEventListener("click", function(event) {
-       carrito.eliminarItem(producto.id)
-       productContainer.removeChild(card)
-   })
+    boton.addEventListener("click", function (event) {
+        carrito.eliminarItem(producto.id)
+        productContainer.removeChild(card)
+        actualizarPrecioTotal()
+    })
 
     let iconoEliminar = document.createElement("i")
     iconoEliminar.classList.add("fa", "fa-trash-alt")
@@ -72,3 +86,21 @@ function pintarTarjeta(producto) {
 
     productContainer.appendChild(card)
 }
+
+//Pagar
+
+let form =document.querySelector("#payment-form")
+form.addEventListener("submit", function (event) {
+    event.preventDefault() //para evitar que se recargue la página
+
+
+    //desestructurar los elementos del formulario
+
+  //  let {card_number, expire_date, cvv} = form.elements
+
+  //  let precioTotal = carrito.calcularPrecioTotal()
+
+
+})
+
+

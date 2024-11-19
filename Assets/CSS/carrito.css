@@ -1,5 +1,7 @@
 main {
     padding: 20px;
+    display: flex;
+    gap: 15px;
 }
 
 p {
@@ -27,5 +29,21 @@ p {
     display: flex;
     flex-direction: column;
     gap: 15px
+}
+
+.products-container{
+    flex-grow: 1;
+
+}
+
+.cart-summary{
+    width: 500px;
+    color: #25B8D9;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+#total-cart{
+    color: darkblue;
+
 }
 
