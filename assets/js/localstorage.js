@@ -37,5 +37,9 @@ Carrito.calcularPrecioTotal = function () {
     //return Carrito.items.reduce((acc, item) => acc + item.subtotal, 0);
 }
 
+Carrito.limpiar  = function() {
+    localStorage.clear()
+}
+
 export default Carrito;
 

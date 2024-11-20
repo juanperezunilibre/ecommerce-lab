@@ -94,3 +94,18 @@ footer a {
 .contact-wrapper iframe {
     flex: 1;
 }
+
+
+#transaction-list-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#transaction-list-info li b {
+    text-transform: uppercase;
+}
+
+#icono-transaccion {
+    margin: 20px 0;
+}
