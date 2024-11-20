@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado de la transacción</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<header>
+    <img src="https://www.creativefabrica.com/wp-content/uploads/2021/06/29/Gradient-ecommerce-logo-Online-shop-Graphics-14011354-1-1-580x386.png"
+         alt="logo" width="200">
+
+    <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <div class="search-contenedor">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar..." aria-label="search"
+                   aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="user-menu">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Hola, Inicia sesión
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
+                <li><a class="dropdown-item" href="register.html">Registrarme</a></li>
+            </ul>
+        </div>
+        <a href="#">Mis compras</a>
+        <button class="btn btn-secondary">
+            <i class="fa fa-heart"></i>
+        </button>
+        <a href="#" class="btn btn-secondary">
+            <i class="fa fa-cart-shopping"></i>
+        </a>
+    </div>
+</header>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar-menu" aria-labelledby="sidebar-menu">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menú</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <a href="/">
+            <i class="fa fa-home"></i>
+            Inicio
+        </a>
+        <a href="/compras.html">
+            <i class="fa fa-money-bill"></i>
+            Compras
+        </a>
+        <a href="/productos.html">
+            <i class="fa fa-box-archive"></i>
+            Productos
+        </a>
+        <a href="/contacto.html">
+            <i class="fa fa-phone"></i>
+            Contáctanos
+        </a>
+        <a href="/acercade.html">
+            <i class="fa fa-question-circle"></i>
+            Acerca de
+        </a>
+    </div>
+</div>
+
+<main>
+    <h1>Resultado de la transacción</h1>
+    <i id="icono-transaccion"></i>
+    <ul id="transaction-list-info"></ul>
+
+    <a href="productos.html" class="btn btn-primary">Seguir comprando</a>
+</main>
+
+<footer>
+    <div>
+        <strong>Te ayudamos</strong>
+        <ul>
+            <li><a href="#">Elemento 1</a></li>
+            <li><a href="#">Elemento 2</a></li>
+            <li><a href="#">Elemento 3</a></li>
+            <li><a href="#">Elemento 4</a></li>
+            <li><a href="#">Elemento 5</a></li>
+            <li><a href="#">Elemento 6</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <strong>Se parte de mitienda.com</strong>
+        <ul>
+            <li><a href="#">Elemento 1</a></li>
+            <li><a href="#">Elemento 2</a></li>
+            <li><a href="#">Elemento 3</a></li>
+            <li><a href="#">Elemento 4</a></li>
+            <li><a href="#">Elemento 5</a></li>
+            <li><a href="#">Elemento 6</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <strong>Se parte de mitienda.com</strong>
+        <ul>
+            <li><a href="#">Elemento 1</a></li>
+            <li><a href="#">Elemento 2</a></li>
+            <li><a href="#">Elemento 3</a></li>
+            <li><a href="#">Elemento 4</a></li>
+            <li><a href="#">Elemento 5</a></li>
+            <li><a href="#">Elemento 6</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <strong>Se parte de mitienda.com</strong>
+        <ul>
+            <li><a href="#">Elemento 1</a></li>
+            <li><a href="#">Elemento 2</a></li>
+            <li><a href="#">Elemento 3</a></li>
+            <li><a href="#">Elemento 4</a></li>
+            <li><a href="#">Elemento 5</a></li>
+            <li><a href="#">Elemento 6</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/result.js" type="module"></script>
+</body>
+</html>
