@@ -2,6 +2,10 @@ const Carrito = {}
 
 Carrito.items = JSON.parse(localStorage.getItem("carrito")) ?? [];
 
+Carrito.totalProductos = function () {
+    return Carrito.items.length
+}
+
 Carrito.agregarItem = function (producto) {
     // si el producto ya existe lo recuperamos de la seleccion del carrito
     const item = Carrito.items.find((item) => item.id === producto.id);
@@ -41,5 +45,8 @@ Carrito.limpiar  = function() {
     localStorage.clear()
 }
 
-export default Carrito;
+export { Carrito }
+
+
+
 

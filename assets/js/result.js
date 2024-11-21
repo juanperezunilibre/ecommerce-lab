@@ -1,6 +1,8 @@
-import {formatoMoneda} from "./utils.js"
+import {actualizarCantidadProductos, formatoMoneda} from "./utils.js"
 
 document.addEventListener("DOMContentLoaded", function() {
+    actualizarCantidadProductos()
+
     // transformar las variables de la URL a objeto
     let url = new URL(location.href)
 
@@ -25,10 +27,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (llave === "status") {
             if (valor === "completed") {
                 icono.classList.add("fa-solid", "fa-circle-check")
-                icono.style = "color: green; font-size: 100px;"
+                icono.style = "color: green;"
             } else {
                 icono.classList.add("fa-solid", "fa-circle-xmark")
-                icono.style = "color: red; font-size: 100px;"
+                icono.style = "color: red;"
             }
         }
 

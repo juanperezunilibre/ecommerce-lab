@@ -1,8 +1,9 @@
-import Carrito from "./localstorage.js";
-import {formatoMoneda} from "./utils.js"
+import {Carrito} from "./localstorage.js";
+import {actualizarCantidadProductos, formatoMoneda} from "./utils.js"
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    actualizarCantidadProductos()
     for (let producto of Carrito.items) {
         pintarTarjeta(producto)
     }
@@ -65,6 +66,7 @@ function pintarTarjeta(producto) {
         Carrito.eliminarItem(producto.id)
         productContainer.removeChild(card)
         actualizarPrecioTotal()
+        actualizarCantidadProductos()
     })
 
     let iconoEliminar = document.createElement("i")

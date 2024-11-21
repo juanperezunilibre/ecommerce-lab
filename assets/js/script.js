@@ -1,12 +1,17 @@
-import productos from "/productos.json" with { type: "json" };
-import Carrito from "./localstorage.js"
-import {formatoMoneda} from "./utils.js"
+import productos from "/productos.json" with {type: "json"};
+import {Carrito} from "./localstorage.js"
+import {actualizarCantidadProductos, formatoMoneda} from "./utils.js"
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+
+    actualizarCantidadProductos()
+
     for (let producto of productos) {
         dibujarTarjeta(producto)
     }
 })
+
+
 
 function valoracionProducto(numero) {
     let ratingWrapper = document.createElement("div")
@@ -104,7 +109,8 @@ function dibujarTarjeta(producto) {
 
 
 function onProductClick(producto) {
-   Carrito.agregarItem(producto)
+    Carrito.agregarItem(producto)
+    actualizarCantidadProductos()
 }
 
 

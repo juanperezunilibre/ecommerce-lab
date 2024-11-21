@@ -8,6 +8,8 @@
     color: #666;
     text-decoration: line-through;
     font-size: 14px;
+    display: block;
+    height: 21px;
 }
 
 .product-grid {
@@ -18,11 +20,6 @@
     gap: 10px;
 }
 
-
-
-.star-content {
-
-}
 
 /* Dos columnas en pantallas medianas */
 @media screen and (min-width: 600px) {
