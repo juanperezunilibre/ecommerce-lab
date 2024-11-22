@@ -9,3 +9,20 @@
     background-color: #25B8D9;
     vertical-align: middle;
 }
+
+.btn-carrito{
+    position: relative;
+}
+
+.btn-carrito span{
+    position: absolute;
+    top:-6px ;
+    right: -6px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: #f00f0088;
+    border-radius: 50%;
+    color: #ecedee;
+
+}

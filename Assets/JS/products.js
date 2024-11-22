@@ -1,14 +1,18 @@
 import productos from "/productos.json" with {type: "json"};
-import carrito from "./localstorage.js";
-import {formatoMoneda} from "./utils.js";
+import {carrito} from "./localstorage.js";
+import {actualizarCantidadProductos, formatoMoneda} from "./utils.js";
 
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    actualizarCantidadProductos()
+
 
     for (let producto of productos) {
         paintCard(producto)
     }
 })
+
 
 //creamos la valoración de estrellas
 
@@ -88,10 +92,9 @@ function paintCard(producto) {
 
     // creamos botón más info
     let buttonInfo = document.createElement("button")
-    buttonInfo.classList.add("btn","btn-primary", "btn-info-color")
+    buttonInfo.classList.add("btn", "btn-primary", "btn-info-color")
     buttonInfo.innerText = "Más información"
     cardBody.appendChild(buttonInfo)
-
 
 
     //creamos el botón de agregar al carrito
@@ -100,7 +103,7 @@ function paintCard(producto) {
     buttonWrapper.classList.add("d-grid")
 
     let button = document.createElement("button")
-    button.classList.add("btn","btn-primary", "btn-carrito-color")
+    button.classList.add("btn", "btn-primary", "btn-carrito-color")
     button.innerText = "Agregar al carrito"
     button.addEventListener("click", function () {
         onProductClick(producto)
@@ -110,14 +113,13 @@ function paintCard(producto) {
     cardBody.appendChild(buttonWrapper)
 
 
-
     // añadimos la card a la grilla de productos
     productGrid.appendChild(card)
 
 }
 
 
-
 function onProductClick(producto) {
     carrito.agregarItem(producto)
+    actualizarCantidadProductos()
 }

@@ -1,7 +1,8 @@
-import carrito from "./localstorage.js";
-import {formatoMoneda} from "./utils.js";
+import {carrito} from "./localstorage.js";
+import {actualizarCantidadProductos, formatoMoneda} from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+    actualizarCantidadProductos()
     for (let producto of carrito.items) {
         pintarTarjeta(producto)
 
@@ -15,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function actualizarPrecioTotal() {
 
 
-let precioTotal = carrito.calcularPrecioTotal()
-let total = document.querySelector("#total-cart")
-total.innerText = "Total: " + formatoMoneda(precioTotal)
+    let precioTotal = carrito.calcularPrecioTotal()
+    let total = document.querySelector("#total-cart")
+    total.innerText = "Total: " + formatoMoneda(precioTotal)
 
 }
 
@@ -69,6 +70,7 @@ function pintarTarjeta(producto) {
         carrito.eliminarItem(producto.id)
         productContainer.removeChild(card)
         actualizarPrecioTotal()
+        actualizarCantidadProductos()
     })
 
     let iconoEliminar = document.createElement("i")
@@ -89,17 +91,42 @@ function pintarTarjeta(producto) {
 
 //Pagar
 
-let form =document.querySelector("#payment-form")
+let form = document.querySelector("#payment-form")
 form.addEventListener("submit", function (event) {
     event.preventDefault() //para evitar que se recargue la página
 
 
-    //desestructurar los elementos del formulario
+    //desestructurar los elementos del formulario (recogemos datos para capturarlos)
 
-  //  let {card_number, expire_date, cvv} = form.elements
+    let {card_number, expire_date, cvv} = form.elements
 
-  //  let precioTotal = carrito.calcularPrecioTotal()
+    let precioTotal = carrito.calcularPrecioTotal()
 
+    //envío de datos --->http
+
+    fetch("https://payment-processor-production.up.railway.app/api/v1/transaction?api_key=9b4fd34d-4295-4e65-a357-08608b9e6038", {
+        method: "POST",  //pasarlos por debajo. GET los pone en el URL
+        body: JSON.stringify({
+            payment: {
+                credit_card: card_number.value,
+                expiration_date: expire_date.value,
+                cvv: cvv.value,
+
+            },
+            transaction: {
+                amount: precioTotal,
+                currency: "USD"
+            }
+        })
+    }).then(res => res.json()).then(({status_code, trx}) => {
+        if (status_code !== undefined) {
+            let params = new URLSearchParams(trx).toString()
+            location.href = "transaction-result.html?" + params
+            if (trx.status === "completed") {
+                carrito.limpiar()
+            }
+        }
+    })
 
 })
 

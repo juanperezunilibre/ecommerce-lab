@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocean Nomads Travel & Diving Club</title>
-    <link rel="stylesheet" href="Assets/CSS/Styles.css">
     <link rel="stylesheet" href="Assets/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="Assets/CSS/Styles.css">
+    <link rel="stylesheet" href="Assets/CSS/products.css">
 
 
 </head>
@@ -39,8 +40,9 @@
             </ul>
         </div>
 
-        <a href="carrito.html" class="btn btn-secondary">
+        <a href="carrito.html" class="btn btn-secondary btn-carrito">
             <i class="fa fa-cart-shopping"></i>
+            <span id="contador-carrito"></span>
         </a>
     </div>
 
@@ -90,22 +92,32 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
 
-                <h3  id="mision-title">Con Ocean Nomads</h3>
+
                 <img src="Assets/img/image2.webp" class="d-block w-100" alt="...">
-                <p id="mision-text">Nos enamoraremos del mar todos los días</p>
+                <div>
+
+                    <p class="mision-text">Nos enamoraremos del mar todos los días</p>
+                </div>
 
             </div>
             <div class="carousel-item">
 
                 <img src="Assets/img/image3.webp" class="d-block w-100" alt="...">
-                <p id="experiences-text" >Conoce nuestras experiencias en Colombia y en el mundo entero y explora destinos
-                    increíbles con personas apasionadas por el mar</p>
+                <div>
+                    <p>Conoce nuestras experiencias en Colombia y en el mundo entero y explora
+                        destinos
+                        increíbles con personas apasionadas por el mar</p>
+                </div>
 
             </div>
             <div class="carousel-item">
 
                 <img src="Assets/img/image1.webp" class="d-block w-100" alt="...">
-                <p id="curses-text" >Certíficate con nosotros como Open Water Diver SSI y comienza a disfrutar el mar de otra manera</p>
+                <div>
+                    <p>Certíficate con nosotros como Open Water Diver SSI y comienza a disfrutar el mar
+                        de
+                        otra manera</p>
+                </div>
 
             </div>
         </div>
@@ -169,5 +181,6 @@
 
 </footer>
 <script src="Assets/JS/bootstrap.bundle.min.js"></script>
+<script src="Assets/JS/products.js" type="module"></script>
 </body>
 </html>

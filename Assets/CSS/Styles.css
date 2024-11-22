@@ -69,31 +69,15 @@ main {
 
 }
 
-.carousel-inner div img {
-    width: 100%;
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-bottom: 10px;
-    border-radius: 8px;
+.carousel-item {
+    position: relative;
 
 }
 
-.carousel-inner div h3 {
-    position: absolute; /*lo ubica sobre la imagen */
-    top: 5px;
-    left: 50%;
-    color: whitesmoke;
-    font-size: 50px;
-    font-family: 'Comfortaa', sans-serif;
-    justify-content: center;
-    max-width: fit-content;
 
-}
 
-.carousel-inner div p {
-    position: absolute; /*lo ubica sobre la imagen */
+.carousel-item div p {
+    position: absolute; /*lo ubica sobre la imagen(relativa) */
     color: white;
     font-size: 35px;
     font-family: 'Comfortaa', sans-serif;
@@ -107,32 +91,18 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+    top: 65%;
+    display: flex;
+    width: 100%;
+
 
 }
 
-#mision-title {
-    transform: translateX(-130%);
+.mision-text{
+    top: 10%;
+
 }
 
-
-
-#mision-text {
-
-    transform: translateY(-145%);
-}
-
-#experiences-text {
-
-
-    transform: translateY(-200%);
-    align-content: center;
-}
-
-
-#curses-text {
-
-    transform: translateY(-200%);
-}
 
 .product-grid {
     flex: 1;
@@ -267,3 +237,16 @@ footer div strong {
 
 }
 
+#transaction-list-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#transaction-list-info li b {
+    text-transform: uppercase;
+}
+
+#icono-transaccion {
+    margin: 20px 0;
+}

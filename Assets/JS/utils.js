@@ -1,3 +1,5 @@
+import {carrito} from "./localstorage.js";
+
 function formatoMoneda(numero) {
     const formatter = Intl.NumberFormat("en-US", {
         style: "currency",
@@ -9,6 +11,18 @@ function formatoMoneda(numero) {
     return formatter.format(numero)
 }
 
-export{formatoMoneda
+function actualizarCantidadProductos() {
+
+
+// mostrar la cantidad de elementos en el carrito
+
+    let contador = document.querySelector("#contador-carrito");
+    contador.innerText = carrito.totalProductos()
+
+}
+
+export {
+    formatoMoneda,
+    actualizarCantidadProductos
 
 }

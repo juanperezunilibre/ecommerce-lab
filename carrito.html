@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="Assets/CSS/Styles.css">
     <link rel="stylesheet" href="Assets/CSS/carrito.css">
+    <link rel="stylesheet" href="Assets/CSS/products.css">
 </head>
 <body>
 <header>
     <a href="index.html">
-    <img src="Assets/img/Logo%20Ocean%20Nomads%20fondo%20aguamarina.png" alt="">
+        <img src="Assets/img/Logo%20Ocean%20Nomads%20fondo%20aguamarina.png" alt="">
+    </a>
 
     <button class="btn btn-outline-dark btn-lg" data-bs-toggle="offcanvas" data-bs-target="#sidebar-menu">
         <i class="fa fa-bars"></i>
@@ -37,8 +39,9 @@
             </ul>
         </div>
 
-        <a href="carrito.html" class="btn btn-secondary">
+        <a href="carrito.html" class="btn btn-secondary btn-carrito">
             <i class="fa fa-cart-shopping"></i>
+            <span id="contador-carrito"></span>
         </a>
     </div>
 
@@ -101,25 +104,27 @@
                 <div class="modal-header">Pagar<h1 class="modal-title fs-5" id="exampleModalLabel">Mis compras</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form>
+                <form id="payment-form">
                     <div class="modal-body">
                         <div class="d-grid">
 
                         </div>
 
                         <div class="mb-3"><label for="card-number" class="form-label">Número de tarjeta</label>
-                            <input type="text" name="card_number" class="form-control" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX"
-                                    minlength="16" required>
+                            <input type="text" name="card_number" class="form-control" id="card-number"
+                                   placeholder="XXXX-XXXX-XXXX-XXXX"
+                                   minlength="16" required>
                         </div>
                         <div class="mb-3"><label for="expire-date" class="form-label">Fecha de vencimiento</label>
                             <input
-                                    type="text" name="expire_date" class="form-control" id="expire-date" placeholder="01/29"
+                                    type="text" name="expire_date" class="form-control" id="expire-date"
+                                    placeholder="01/29"
                                     pattern="\d{2}\/\d{2}" required>
                         </div>
                         <div class="mb-3"><label for="cvv" name="cvv" class="form-label">CVV</label> <input type="text"
-                                                                                                 class="form-control"
-                                                                                                 id="cvv"
-                                                                                                 placeholder="123">
+                                                                                                            class="form-control"
+                                                                                                            id="cvv"
+                                                                                                            placeholder="123">
                         </div>
 
                         <div class="modal-footer">
@@ -127,6 +132,7 @@
                                 comprando
                             </button>
                             <button type="submit" class="btn btn-primary">Pagar</button>
+                            <!--type submit hace que por JS permita capturar los datos del formulario -->
                         </div>
                 </form>
             </div>
