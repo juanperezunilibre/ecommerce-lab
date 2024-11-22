@@ -2,4 +2,4 @@
 
 Proyecto desarrollado en laboratorios
 
-[Enlace a sitio en vercel](https://ecommerce-lab.vercel.app)
+[Enlace a sitio en vercel](https://ecommerce-lab.vercel.app){:target="_blank"}
