@@ -1,18 +1,64 @@
 import productos from "/productos.json" with {type: "json"};
 import {carrito} from "./localstorage.js";
-import {actualizarCantidadProductos, formatoMoneda} from "./utils.js";
+import {actualizarCantidadProductos, formatoMoneda, obtenerVariablesURL} from "./utils.js";
 
+//Se referencia al section que contiene los productos
+
+let productGrid = document.querySelector("#products-grid");
 
 document.addEventListener("DOMContentLoaded", function () {
-
+    pintarCategorias()
     actualizarCantidadProductos()
 
+    let params = obtenerVariablesURL()
+    let categoria = params.get("categoria")
+    filtrarProductos(categoria)
 
-    for (let producto of productos) {
-        paintCard(producto)
-    }
+    //buscar desde la barra
+
+    let searchInput = document.querySelector("#search")
+    searchInput.addEventListener("input", (event) => {
+        let value = event.target.value
+        filtrarProductos(categoria, value)
+    })
+
+
 })
 
+const filtrarProductos = (categoria, nombre = "") => {
+    let filtrados
+    if (categoria && categoria !== "Todas") {
+        filtrados = productos.filter(item => item.categoria === categoria)
+    } else if (nombre) {
+        filtrados = productos.filter(item => item.nombre.toLowerCase().includes(nombre.toLowerCase()))
+
+    } else {
+        filtrados = productos
+    }
+
+    productGrid.innerHTML = ""
+    for (let producto of filtrados) {
+        paintCard(producto)
+    }
+}
+
+function pintarCategorias() {
+    let listaCategorias = document.querySelector("#lista-categorias")
+    let categorias = productos.map(item => item.categoria)
+    categorias.unshift("Todas")
+    console.log(categorias)
+
+    //Limpiamos los duplicados
+    categorias = [...new Set(categorias)]
+    console.log(categorias)
+
+
+    //limpiamos los Li con los a internos
+    for (let categoria of categorias) {
+        let html = `<li><a href="products.html?categoria=${categoria}">${categoria}</a></li>`
+        listaCategorias.innerHTML += html
+    }
+}
 
 //creamos la valoración de estrellas
 
@@ -39,9 +85,6 @@ function valoracionProducto(numero) {
 
 function paintCard(producto) {
 
-    //Se referencia al section que contiene los productos
-
-    let productGrid = document.querySelector("#products-grid");
 
     //creamos la card (contenedor)
 

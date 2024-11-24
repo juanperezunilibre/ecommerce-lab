@@ -2,11 +2,12 @@
     {
       "id": 1,
       "imagen": "Assets/img/Curacao.jpg",
-      "nombre": "Curaçao",
+      "nombre": "Islas del Rosario",
       "descripcion": "Ven y acompañanos a explorar la isla y a experimentar su vibrante vida marina y sus aguas cristalinas, ¡Prepárate para vivir una aventura submarina inolvidable!",
-      "precio": 1400,
-      "precio_original": 1560,
-      "valoracion": 4
+      "precio": 700,
+      "precio_original": 800,
+      "valoracion": 4,
+      "categoria": "Nacional"
     },
     {
       "id": 2,
@@ -15,7 +16,8 @@
       "descripcion": "Esta experiencia ha sido diseñada para buzos y no buzos, y concebida bajo la filosofía del amor por el detalle, garantizando comodidad y una experiencia «Premium»!",
       "precio": 1900,
       "precio_original": 2100,
-      "valoracion": 5
+      "valoracion": 5,
+      "categoria": "Internacional"
     },
 
    {
@@ -25,7 +27,8 @@
      "descripcion": "Embárcate en esta aventura de buceo donde nos adentraremos en las profundidades de lugares icónicos como el Parque Nacional Ras Mohammed y la Isla Rocosa en Egipto!",
      "precio": 2100,
      "precio_original": 2300,
-     "valoracion": 4
+     "valoracion": 4,
+     "categoria": "Internacional"
    },
 
    {
@@ -35,7 +38,8 @@
      "descripcion": "Lobos marinos, cardúmenes de peces, ballenas jorobadas, Safaris marinos, el gran acuario del mundo… Baja California es un destino que nos deja sin palabras cada que lo visitamos!",
      "precio": 1800,
      "precio_original": 1950,
-     "valoracion": 5
+     "valoracion": 5,
+     "categoria": "Internacional"
    },
 
    {
@@ -45,6 +49,7 @@
      "descripcion": "Atrévete a visitar uno de los destinos más visitados por buzos donde encontrarás tesoros submarinos y tendrás los mejores encuentros con vida marina del sudeste asiático.!",
      "precio": 2600,
      "precio_original": 2800,
-     "valoracion": 5
+     "valoracion": 5,
+     "categoria": "Internacional"
    }
   ]

@@ -21,8 +21,14 @@ function actualizarCantidadProductos() {
 
 }
 
+function obtenerVariablesURL() {
+    let url = new URL(location.href)
+    return url.searchParams
+}
+
 export {
     formatoMoneda,
-    actualizarCantidadProductos
+    actualizarCantidadProductos,
+    obtenerVariablesURL
 
 }
